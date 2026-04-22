@@ -7,7 +7,7 @@ projects:
             type: web
             runtime: node
             rootDir: web
-            buildCommand: cd .. && pnpm install && pnpm --filter web build && pnpm --filter web db:migrate
+            buildCommand: cd .. && pnpm install && pnpm --filter web build && pnpm --filter web db:migrate && pnpm --filter web db:seed:dev
             startCommand: pnpm start
             envVars:
               - key: DATABASE_URL
