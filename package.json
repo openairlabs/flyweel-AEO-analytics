@@ -10,7 +10,8 @@
     "format": "biome format --write .",
     "db:generate": "pnpm --filter web db:generate",
     "db:migrate": "pnpm --filter web db:migrate",
-    "db:seed": "pnpm --filter web db:seed"
+    "db:seed": "pnpm --filter web db:seed",
+    "db:seed:dev": "pnpm --filter web db:seed:dev"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.0"
