@@ -1,0 +1,51 @@
+projects:
+  - name: aeo-analytics
+    environments:
+      - name: production
+        services:
+          - name: aeo-analytics-web
+            type: web
+            runtime: node
+            rootDir: web
+            buildCommand: cd .. && pnpm install && pnpm --filter web build && pnpm --filter web db:migrate
+            startCommand: pnpm start
+            envVars:
+              - key: DATABASE_URL
+                fromDatabase:
+                  name: aeo-analytics-db
+                  property: connectionString
+              - key: RENDER_API_KEY
+                sync: false
+              - key: RENDER_WORKFLOW_SLUG
+                sync: false
+              - key: OPENAI_API_KEY
+                sync: false
+              - key: ANTHROPIC_API_KEY
+                sync: false
+              - key: GOOGLE_API_KEY
+                sync: false
+              - key: CRON_SECRET
+                generateValue: true
+
+          - name: aeo-analytics-cron
+            type: cron
+            runtime: node
+            rootDir: cron
+            buildCommand: echo "No build needed"
+            startCommand: node index.mjs
+            schedule: "0 0 * * *"
+            envVars:
+              - key: RENDER_API_KEY
+                fromService:
+                  type: web
+                  name: aeo-analytics-web
+                  envVarKey: RENDER_API_KEY
+              - key: RENDER_WORKFLOW_SLUG
+                fromService:
+                  type: web
+                  name: aeo-analytics-web
+                  envVarKey: RENDER_WORKFLOW_SLUG
+
+        databases:
+          - name: aeo-analytics-db
+            plan: basic-1gb

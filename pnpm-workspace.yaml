@@ -1,0 +1,8 @@
+packages:
+  - web
+  - workflows
+
+ignoredBuiltDependencies:
+  - '@biomejs/biome'
+  - esbuild
+  - sharp

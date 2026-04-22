@@ -1,0 +1,29 @@
+{
+  "name": "workflows",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx index.ts"
+  },
+  "dependencies": {
+    "@langchain/anthropic": "latest",
+    "@langchain/core": "latest",
+    "@langchain/google-genai": "latest",
+    "@langchain/openai": "latest",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "@renderinc/sdk": "^0.4.1",
+    "dotenv": "^16.4.0",
+    "drizzle-orm": "^0.38.0",
+    "langchain": "latest",
+    "async-sema": "^3.1.1",
+    "postgres": "^3.4.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

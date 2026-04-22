@@ -1,0 +1,21 @@
+{
+  "name": "aeo-analytics",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "db:generate": "pnpm --filter web db:generate",
+    "db:migrate": "pnpm --filter web db:migrate",
+    "db:seed": "pnpm --filter web db:seed"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
