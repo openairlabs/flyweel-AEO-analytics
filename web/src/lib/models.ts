@@ -1,6 +1,6 @@
 export const PROVIDER_MODELS: Record<string, string[]> = {
-  openai: ["gpt-5.2", "gpt-5.1", "gpt-5-mini", "gpt-4o", "gpt-4o-mini"],
-  google: ["gemini-3-pro-preview", "gemini-2.5-pro", "gemini-2.5-flash"],
+  openai: ["gpt-5.4", "gpt-5.2"],
+  google: ["gemini-3.1-pro-preview", "gemini-3-flash-preview"],
 };
 
 export const PROVIDERS = Object.keys(PROVIDER_MODELS) as Array<

@@ -1,0 +1,1 @@
+ALTER TABLE "prompts" ADD CONSTRAINT "prompts_content_unique" UNIQUE("content");

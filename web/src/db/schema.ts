@@ -56,7 +56,7 @@ export const prompts = pgTable("prompts", {
     .primaryKey()
     .$defaultFn(() => createId()),
   name: text("name").notNull(),
-  content: text("content").notNull(),
+  content: text("content").notNull().unique(),
   industryId: text("industry_id").references(() => industries.id),
   isActive: boolean("is_active").default(true),
   createdAt: timestamp("created_at").defaultNow(),
